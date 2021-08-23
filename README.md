@@ -1,12 +1,5 @@
 # MyZap - Free Open Source Whatsapp Api 2.2
 
-[![Video explicativo do projeto](https://img.youtube.com/vi/blOpjAS1Fik/0.jpg)](https://www.youtube.com/watch?v=blOpjAS1Fik)
-
-
-[Grupo do Whatsapp: Link para o nosso grupo para tirar dúvidas e nos ajudarmos (clique aqui)](https://chat.whatsapp.com/DMehlYDcMWiKmlIsOLGAQM)
-
-
-
 Este projeto usa como base o [Venom-bot](https://github.com/orkestral/venom) ou o [WPPCONNECT](https://github.com/wppconnect-team/wppconnect), um navegador virtual sem interface gráfica que abre o whatsapp web e executa todos os comandos via código possibilitando assim a automação de todas as funções.
 
 ## Setup
@@ -21,7 +14,7 @@ Este projeto usa como base o [Venom-bot](https://github.com/orkestral/venom) ou 
 
 `cd /home`
 
-`git clone https://github.com/billbarsch/myzap.git`
+`git clone https://github.com/tiagocaus/myzap.git`
 
 `cd myzap`
 
