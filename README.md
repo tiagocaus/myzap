@@ -1,4 +1,4 @@
-# MyZap - Free Open Source Whatsapp Api 2
+# MyZap - Free Open Source Whatsapp Api 2.2
 
 [![Video explicativo do projeto](https://img.youtube.com/vi/blOpjAS1Fik/0.jpg)](https://www.youtube.com/watch?v=blOpjAS1Fik)
 
