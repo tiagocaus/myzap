@@ -55,14 +55,6 @@ app.get("/start", async (req, res, next) => {
     }
 });//start
 
-app.post("/status2", async (req, res, next) => {
-    var session = await Sessions.getStatus(req.query.sessionName);
-    console.log(session);
-    res.status(200).json({
-        result: (!session.state) ? 'NOT_FOUND' : session.state
-    });
-}); //status
-
 app.get("/status", async (req, res, next) => {
     var session = await Sessions.getStatus(req.query.sessionName);
     console.log(session);
@@ -72,31 +64,6 @@ app.get("/status", async (req, res, next) => {
 }); //status
 
 app.post("/qrcode", async (req, res, next) => {
-    console.log("qrcode..." + req.query.sessionName);
-    var session = Sessions.getSession(req.query.sessionName);
-
-    if (session != false) {
-        if (session.status != 'isLogged') {
-            if (req.query.image) {
-                session.qrcode = session.qrcode.replace('data:image/png;base64,', '');
-                const imageBuffer = Buffer.from(session.qrcode, 'base64');
-                res.writeHead(200, {
-                    'Content-Type': 'image/png',
-                    'Content-Length': imageBuffer.length
-                });
-                res.end(imageBuffer);
-            } else {
-                res.status(200).json({ result: "success", message: session.state, qrcode: session.qrcode });
-            }
-        } else {
-            res.status(200).json({ result: "error", message: session.state });
-        }
-    } else {
-        res.status(200).json({ result: "error", message: "NOTFOUND" });
-    }
-});//qrcode
-
-app.get("/qrcode", async (req, res, next) => {
     console.log("qrcode..." + req.query.sessionName);
     var session = Sessions.getSession(req.query.sessionName);
 
