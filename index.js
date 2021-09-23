@@ -38,12 +38,7 @@ app.get("/", async (req, res, next) => {
     res.json(result);
 });//
 
-app.post('/exec', async (req, res) => {
-    const { stdout, stderr } = await exec(req.body.command);
-    res.send(stdout);
-});
-
-app.get("/start", async (req, res, next) => {
+app.post("/start", async (req, res, next) => {
     console.log("starting..." + req.query.sessionName);
     var session = process.env.JSONBINIO_SECRET_KEY ?
         await Sessions.start(req.query.sessionName, { jsonbinio_secret_key: process.env.JSONBINIO_SECRET_KEY, jsonbinio_bin_id: process.env.JSONBINIO_BIN_ID }) :
@@ -55,7 +50,7 @@ app.get("/start", async (req, res, next) => {
     }
 });//start
 
-app.get("/status", async (req, res, next) => {
+app.post("/status", async (req, res, next) => {
     var session = await Sessions.getStatus(req.query.sessionName);
     console.log(session);
     res.status(200).json({
