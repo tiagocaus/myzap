@@ -63,7 +63,7 @@ app.get("/status", async (req, res, next) => {
     });
 }); //status
 
-app.get("/qrcode", async (req, res, next) => {
+app.post("/qrcode", async (req, res, next) => {
     console.log("qrcode..." + req.query.sessionName);
     var session = Sessions.getSession(req.query.sessionName);
 
