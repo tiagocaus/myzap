@@ -38,7 +38,7 @@ app.get("/", async (req, res, next) => {
     res.json(result);
 });//
 
-app.post("/start", async (req, res, next) => {
+app.get("/start", async (req, res, next) => {
     console.log("starting..." + req.query.sessionName);
     var session = process.env.JSONBINIO_SECRET_KEY ?
         await Sessions.start(req.query.sessionName, { jsonbinio_secret_key: process.env.JSONBINIO_SECRET_KEY, jsonbinio_bin_id: process.env.JSONBINIO_BIN_ID }) :
