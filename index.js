@@ -50,7 +50,7 @@ app.post("/start", async (req, res, next) => {
     }
 });//start
 
-app.post("/status", async (req, res, next) => {
+app.get("/status", async (req, res, next) => {
     var session = await Sessions.getStatus(req.query.sessionName);
     console.log(session);
     res.status(200).json({
@@ -58,7 +58,7 @@ app.post("/status", async (req, res, next) => {
     });
 }); //status
 
-app.post("/qrcode", async (req, res, next) => {
+app.get("/qrcode", async (req, res, next) => {
     console.log("qrcode..." + req.query.sessionName);
     var session = Sessions.getSession(req.query.sessionName);
 
